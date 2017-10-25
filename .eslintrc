@@ -1,0 +1,40 @@
+{
+    // https://github.com/airbnb/javascript
+    "extends": "airbnb",
+
+    "rules": {
+        "arrow-body-style": 0,
+        "arrow-parens": 0,
+        "import/no-extraneous-dependencies": 0,
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "linebreak-style": 0,
+        "max-len": 0,
+        "no-plusplus": 0,
+        "no-return-assign": 0,
+        "react/jsx-indent": [2, 4],
+        "react/jsx-indent-props": [2, 4],
+        "react/require-default-props": 0,
+        "react/no-array-index-key": 0,
+        "import/extensions": 0,
+        "jsx-a11y/accessible-emoji": 0,
+        "no-underscore-dangle": 0,
+        "no-param-reassign": 0
+    },
+    "globals": {
+        "Java": true,
+        "React": true,
+        "ReactDOMServer": true,
+        "ReactDOM": true,
+        "comhem": true,
+        "$": true,
+        "describe": true,
+        "it": true,
+        "before": true,
+        "beforeEach": true,
+        "after": true,
+        "afterEach": true,
+        "window": true,
+        "document": true,
+        "XMLHttpRequest": true
+    }
+}

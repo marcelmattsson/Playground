@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getAllTasks, postNewTask } from '../../../redux/reducer';
+import { getAllTasks, postNewTask } from '../../../redux/tasks/tasks_actions';
 import Task from '../Task';
 
 class Home extends Component {
     componentDidMount() {
-        getAllTasks();
     }
     render() {
+        console.log(this.props.tasks);
         return (
             <div>
                 <div className="container">
@@ -19,8 +19,7 @@ class Home extends Component {
                                 evt.preventDefault();
                                 this.props.postNewTask(evt.target.taskName.value);
                                 evt.target.taskName.value = '';
-                            }
-                            }
+                            }}
                             >
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1">Add New To-Do</label>
@@ -42,7 +41,7 @@ class Home extends Component {
                     {
                         this.props.tasks && this.props.tasks.map((task) => {
                             return (
-                                <Task key={task._id} Obj={task} isComplete={task.metafields[0].value} Name={task.title} />
+                                <Task key={task._id} Obj={task} isComplete={task.metafields[0].value} name={task.title} />
                             );
                         })
                     }
@@ -57,7 +56,9 @@ Home.propTypes = {
     postNewTask: PropTypes.func,
 };
 
-const mapState = ({ tasks }) => ({ tasks });
+const mapState = (state) => ({
+    tasks: state.tasks.tasks,
+});
 const mapDispatch = { getAllTasks, postNewTask };
 export { Home as presenter };
 export default connect(mapState, mapDispatch)(Home);

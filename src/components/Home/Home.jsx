@@ -14,7 +14,7 @@ class Home extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12">
-                            <h1 className="home__title">Cosmic To-Do App!!</h1>
+                            <h1 className="home__title">To-Do App!!</h1>
                             <form onSubmit={evt => {
                                 evt.preventDefault();
                                 this.props.postNewTask(evt.target.taskName.value);

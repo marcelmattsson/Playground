@@ -8,7 +8,6 @@
         "start-dev": "nodemon server/index.js",
         "build": "webpack -p",
         "build-dev": "webpack -w",
-        "build-sass": "node-sass -w ./src/styles/main.scss -o ./src/styles/mainSheet",
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "WEBPACK=webpack-dev-server npm run build -s",
         "builder": "${webpack:-webpack} src/index.js --output-path build --output-file bundle.js -d --module-bind 'js=babel' --module-bind 'less=style!css!autoprefer!less'"

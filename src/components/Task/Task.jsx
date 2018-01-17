@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { putChangeStatus, deleteTask } from '../../redux/tasks/tasks_actions';
+import { putChangeStatus, deleteTask } from '../../../redux/tasks/tasks_actions';
 
 const Task = (props) => {
     return (
         <div className="row">
-            <div className="btn-group" role="group" aria-label="Basic example">
+            <div className="task__button-group">
                 <button
                     type="button"
                     onClick={() => { props.putChangeStatus(props.Obj, props.isComplete); }}
-                    className="btn"
+                    className="task__button"
                 >
                     {props.isComplete ? 'Undo' : 'Complete'}
                 </button>
-                <button type="button" onClick={() => props.deleteTask(props.Obj.slug)} className="btn">Delete</button>
+                <button type="button" onClick={() => props.deleteTask(props.Obj.slug)} className="task__button">Delete</button>
             </div>
             <h3 style={{ textDecoration: props.isComplete ? 'line-through' : 'none' }}>{props.name}</h3>
         </div>
